@@ -1,0 +1,16 @@
+.pitch-btn {
+  margin-inline: 1em;
+}
+
+.pitch-close-btn {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  font-size: 0.8em;
+  background-color: transparent;
+}
+
+.pitch-text {
+  display: grid;
+  height: 100%;
+}
