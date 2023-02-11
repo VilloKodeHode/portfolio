@@ -17,7 +17,7 @@ function Projects() {
     <>
       <div className="">
         <section
-          className="flex z-50 flex-row flex-wrap justify-center content-center sm:mx-[10%] mx-[5%]"
+          className="flex animate-Appear z-50 flex-row flex-wrap justify-center content-center sm:mx-[10%] mx-[5%]"
           id="projects"
         >
           <div className="flex justify-center m-auto content-center flex-wrap">
@@ -101,10 +101,10 @@ export function ProjectCard(props) {
             src={src}
           />
           <button
-            className={` xl:text-xs text-[10px] md:w-[90%] sm:36 w-24 ${
+            className={` xl:text-xs text-[10px] md:w-[90%] sm:36 w-24 transition-all duration-500 hover:animate-ButtonHover ${
               selectedTheme === "Lightmode"
                 ? "bg-fairy-300 border-water-100 shadow-water-100 text-water-100 rounded-xl"
-                : "bg-water-100 border-fairy-300 shadow-fairy-300 text-fairy-300 hover:bg-superDry-secondary rounded-[1px]"
+                : "bg-water-100 border-fairy-300 shadow-fairy-300 text-fairy-300 rounded-[1px]"
             } btn p-2 rounded-xl  border-2 shadow-sm bg-opacity-70 backdrop-blur-xs`}
             onClick={() => setToggle(true)}
           >
@@ -115,7 +115,7 @@ export function ProjectCard(props) {
 
       {toggle && (
         <>
-          <div className="z-20 absolute -top-1/2 translate-y-1/2 left-1/2 -translate-x-1/2 w-screen h-screen bg-earth-200 bg-opacity-70 backdrop-blur-sm rounded-3xl [&>*]:animate-ProjectSlideIn">
+          <div className="z-20 absolute -top-1/2 translate-y-1/2 left-1/2 -translate-x-1/2 w-screen h-screen bg-earth-200 bg-opacity-70 backdrop-blur-sm rounded-3xl [&>*]:animate-ModalSlideIn">
             <div
               className={`p-4 h-screen  ${
                 selectedTheme === "Lightmode"

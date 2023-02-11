@@ -62,7 +62,7 @@ export function MySkills(props) {
 
 export function KnowledgeContent() {
   return (
-    <div className="flex justify-center flex-wrap xl:gap-16 md:gap-12 sm:gap-8 ml:gap-4 gap-2">
+    <div className="animate-Appear flex justify-center flex-wrap xl:gap-16 md:gap-12 sm:gap-8 ml:gap-4 gap-2">
       <KnowledgeIcon
         src="https://cdn-icons-png.flaticon.com/512/136/136528.png"
         alt="HyperText Markup Language"
@@ -158,7 +158,7 @@ export function SkillsContent() {
       <SkewedButton
         text="Skills"
         onClick={() => setToggle(!toggle)}
-        className="m-8 border-2 w-fit"
+        className="m-8 border-2 w-fit animate-Appear"
       />
 
       {toggle && (
@@ -167,7 +167,7 @@ export function SkillsContent() {
             selectedTheme === "Lightmode"
               ? " bg-water-100 text-fairy-300 rounded-l-xl scrollbar-thumb-fairy-300"
               : " bg-fairy-300 text-water-100 scrollbar-thumb-water-100"
-          } animate-ProjectSlideIn bg-opacity-90 shadow-2xl shadow-black p-8 overflow-y-scroll scrollbar  scrollbar-track-transparent fixed md:w-[90%] h-3/4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50`}
+          } animate-ModalSlideIn bg-opacity-90 shadow-2xl shadow-black p-8 overflow-y-scroll scrollbar  scrollbar-track-transparent fixed md:w-[90%] h-3/4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50`}
         >
           <SkewedButton
             text="X"

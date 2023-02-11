@@ -8,7 +8,7 @@ import PageTitle from "./PageTitle.jsx";
 function NavBar() {
   const { page } = useContext(PageContext);
   return (
-    <header className="absolute w-screen top-2 left-0 z-50">
+    <header className="absolute w-screen top-2 left-0 z-50 animate-SlideInFromTop">
       <div className="flex md:mx-12 mx-4 mt-8 justify-between items-center">
         <PageTitle title={page} />
         <div className="flex">

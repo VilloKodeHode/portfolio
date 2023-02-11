@@ -21,15 +21,15 @@ export default function HeroPage() {
   const { setPage } = useContext(PageContext);
 
   useEffect(() => {
-    setPage("About me");
+    setPage("Om meg");
   }, []);
   return (
     <>
-      <main className="px-8 grid sm:grid-rows-2 grid-cols-1 mt-12 sm:mt-0 sm:grid-cols-2 xl:mx-24 md:mx-12 sm:mx-4">
-        <article className="m-auto">
-          <h1 className="my-4 z-50" id="home">
+      <main className="animate-Appear px-8 grid sm:grid-rows-2 grid-cols-1 sm:mt-0 sm:grid-cols-2 xl:mx-24 md:mx-12 sm:mx-4">
+        <article className="m-auto z-50">
+          <h1 className="my-4" id="home">
             <span
-              className={`font-Roboto text-7xl ${
+              className={`font-Roboto  md:text-7xl ${
                 selectedTheme === "Lightmode"
                   ? " text-fairy-200"
                   : " text-water-100"
@@ -52,12 +52,12 @@ export default function HeroPage() {
             lære mer!
           </p>
         </article>
-        <div className="m-auto">
+        <div className="mx-auto">
           <img
-            className={`md:h-80 h-64 border-b-2 ${
+            className={`md:h-80 h-64 border-b-2  ${
               selectedTheme === "Lightmode"
                 ? "border-earth-400 rounded-full"
-                : "border-superDry-effect mask mask-parallelogram-2 p-6"
+                : "border-water-100 mask mask-parallelogram-2 p-6"
             }`}
             src={HERO}
           />

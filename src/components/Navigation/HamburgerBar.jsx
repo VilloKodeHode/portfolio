@@ -35,8 +35,8 @@ export default function HamburgerBar() {
           className={`menu menu-normal dropdown-content ${
             selectedTheme === "Darkmode"
               ? " bg-water-100 text-fairy-300 rounded-none -translate-x-[77px]"
-              : " bg-fairy-300 text-water-100 rounded-t-none -translate-x-[81px]"
-          } mt-0 p-2  border-superDry-primary shadow rounded-box w-fit backdrop-blur-sm z-50`}
+              : " bg-fairy-300 text-water-100 -translate-x-[81px]"
+          } mt-0 p-2 shadow rounded-box w-fit bg-opacity-80 backdrop-blur-sm z-50`}
         >
           <li>
             <Link className="px-4 " to="/">
@@ -56,6 +56,11 @@ export default function HamburgerBar() {
           <li>
             <Link className="px-4" to="/projects">
               Prosjekter
+            </Link>
+          </li>
+          <li>
+            <Link className="px-4" to="/contact">
+              Kontakt
             </Link>
           </li>
         </ul>

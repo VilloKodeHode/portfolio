@@ -14,6 +14,7 @@ import HeroPage from "./pages/HeroPage";
 import QualificationsPage from "./pages/QualificationsPage";
 import PageContext from "./components/Navigation/PageContext";
 import ProjectsPage from "./pages/ProjectsPage";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   const [selectedTheme, setSelectedTheme] = useState("Darkmode");
@@ -31,6 +32,7 @@ function App() {
             <Route path="/about" element={<HeroPage />} />
             <Route path="/qualifications" element={<QualificationsPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </Router>
       </PageContext.Provider>

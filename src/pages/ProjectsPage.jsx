@@ -9,7 +9,7 @@ function ProjectsPage() {
   const { setPage } = useContext(PageContext);
 
   useEffect(() => {
-    setPage("Projects");
+    setPage("Prosjekter");
   }, []);
   return <Projects />;
 }
