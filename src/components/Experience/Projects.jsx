@@ -17,7 +17,7 @@ function Projects() {
     <>
       <div className="">
         <section
-          className="flex animate-Appear z-50 flex-row flex-wrap justify-center content-center sm:mx-[10%] mx-[5%]"
+          className="flex animate-Appear z-50 flex-row my-12 flex-wrap justify-center content-center sm:mx-[10%] mx-[5%]"
           id="projects"
         >
           <div className="flex justify-center m-auto content-center flex-wrap">
@@ -115,7 +115,7 @@ export function ProjectCard(props) {
 
       {toggle && (
         <>
-          <div className="z-20 absolute -top-1/2 translate-y-1/2 left-1/2 -translate-x-1/2 w-screen h-screen bg-earth-200 bg-opacity-70 backdrop-blur-sm rounded-3xl [&>*]:animate-ModalSlideIn">
+          <div className="z-20 fixed -top-1/2 translate-y-1/2 left-1/2 -translate-x-1/2 w-screen h-screen bg-earth-200 bg-opacity-70 backdrop-blur-sm rounded-3xl [&>*]:animate-ModalSlideIn">
             <div
               className={`p-4 h-screen  ${
                 selectedTheme === "Lightmode"

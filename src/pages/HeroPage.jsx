@@ -25,8 +25,8 @@ export default function HeroPage() {
   }, []);
   return (
     <>
-      <main className="animate-Appear px-8 grid sm:grid-rows-2 grid-cols-1 sm:mt-0 sm:grid-cols-2 xl:mx-24 md:mx-12 sm:mx-4">
-        <article className="m-auto z-50">
+      <main className="animate-Appear px-8 grid md:gap-0 md:my-0 my-8 gap-12 sm:grid-rows-2 grid-cols-1 sm:mt-0 sm:grid-cols-2 xl:mx-24 md:mx-12 sm:mx-4">
+        <article className="m-auto z-40">
           <h1 className="my-4" id="home">
             <span
               className={`font-Roboto  md:text-7xl ${
