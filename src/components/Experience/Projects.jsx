@@ -17,7 +17,7 @@ function Projects() {
     <>
       <div className="">
         <section
-          className="flex animate-Appear z-50 flex-row my-12 flex-wrap justify-center content-center sm:mx-[10%] mx-[5%]"
+          className="flex animate-Appear z-50 flex-row my-12 flex-wrap justify-center content-center"
           id="projects"
         >
           <div className="flex justify-center m-auto content-center flex-wrap">

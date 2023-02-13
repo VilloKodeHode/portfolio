@@ -6,9 +6,10 @@ import Cv from "../components/Cv/Cv";
 
 //images:
 
-import FANCYCV from "./assets/Fancy CV space.png";
-import STANDARDCV from "./assets/Standard CV space.pdf";
-import STANDARDCVIMG from "./assets/Standard CV pic space.png";
+import SHORTEDCV from "./assets/Norwegian resume shorted.pdf";
+import SHORTEDCVIMG from "./assets/Norwegian resume shorted.png";
+import STANDARDCV from "./assets/Norwegian resume plain.pdf";
+import STANDARDCVIMG from "./assets/Norwegian resume plain pic.png";
 import HERO from "./assets/Villo.png";
 
 //styles:
@@ -64,7 +65,7 @@ export default function HeroPage() {
         </div>
         <div className="wrapper cv-wrapper">
           <Cv href={STANDARDCV} src={STANDARDCVIMG} className="cv standard" />
-          <Cv href={FANCYCV} src={FANCYCV} className="cv fancy" />
+          <Cv href={SHORTEDCV} src={SHORTEDCVIMG} className="cv fancy" />
         </div>
         <div className="md:w-2/3 mx-auto">
           <AboutWindow />
