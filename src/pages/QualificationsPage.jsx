@@ -1,4 +1,5 @@
 import { useContext, useEffect } from "react";
+import LanguageContext from "../components/base components/LanguageSwitch/LanguageContext";
 import {
   KnowledgeContent,
   SkillsContent,
@@ -9,10 +10,13 @@ import PageContext from "../components/Navigation/PageContext";
 
 function QualificationsPage() {
   const { setPage } = useContext(PageContext);
+  const { language } = useContext(LanguageContext);
 
   useEffect(() => {
-    setPage("Kvalifikasjoner");
-  }, []);
+    language === "Norwegian"
+      ? setPage("Kvalifikasjoner")
+      : setPage("Qualifications");
+  }, [language]);
   return (
     <>
       <KnowledgeContent />
