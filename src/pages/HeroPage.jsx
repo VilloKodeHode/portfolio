@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import ThemeContext from "../components/base components/ThemeSwitch/ThemeContext";
 import PageContext from "../components/Navigation/PageContext";
+import LanguageContext from "../components/base components/LanguageSwitch/LanguageContext";
 
 import Cv from "../components/Cv/Cv";
 
@@ -20,10 +21,11 @@ import PitchWindow, { AboutWindow } from "../components/Pitch/pitch";
 export default function HeroPage() {
   const { selectedTheme } = useContext(ThemeContext);
   const { setPage } = useContext(PageContext);
+  const { language } = useContext(LanguageContext);
 
   useEffect(() => {
-    setPage("Om meg");
-  }, []);
+    language === "Norwegian" ? setPage("Om meg") : setPage("About me");
+  }, [language]);
   return (
     <>
       <main className="animate-Appear px-8 grid md:gap-0 md:my-0 my-8 gap-12 sm:grid-rows-2 grid-cols-1 sm:mt-0 sm:grid-cols-2 xl:mx-24 md:mx-12 sm:mx-4">
@@ -47,10 +49,9 @@ export default function HeroPage() {
                 : " text-water-200"
             }`}
           >
-            For tiden går jeg på kurs om Front-End-Development og bruker
-            endeløse timer på å lære så mye jeg kan om koding og design. Jeg
-            nyter hvert eneste sekund og blir bare mer og mer interessert i å
-            lære mer!
+            {language === "Norwegian"
+              ? "For tiden går jeg på kurs om Front-End-Development og bruker endeløse timer på å lære så mye jeg kan om koding og design. Jeg nyter hvert eneste sekund og blir bare mer og mer interessert i å lære mer!"
+              : "I am currently enrolling in a Front End developer course and use a lot of time to learn about coding and desing. I'm enjoying every second and constantly get more and more interested to learn more!"}
           </p>
         </article>
         <div className="mx-auto">

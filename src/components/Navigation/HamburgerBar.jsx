@@ -1,18 +1,20 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import ThemeContext from "../base components/ThemeSwitch/ThemeContext";
+import LanguageContext from "../base components/LanguageSwitch/LanguageContext";
 
 export default function HamburgerBar() {
   const { selectedTheme } = useContext(ThemeContext);
+  const { language } = useContext(LanguageContext);
   return (
     <div className="">
       <div className="dropdown dropdown-hover">
         <label
           tabIndex={0}
-          className={` border-1 -skew-x-[20deg] ${
+          className={`shadow-inner  border-none -skew-x-[20deg] ${
             selectedTheme === "Lightmode"
-              ? "btn bg-fairy-300 border-fairy-300 rounded-l-none"
-              : "btn bg-water-100 border-water-100 hover:bg-water-200  rounded-none"
+              ? "btn bg-fairy-400 shadow-earth-400 rounded-l-none"
+              : "btn bg-water-200 shadow-fairy-400 hover:bg-water-100  rounded-none"
           }`}
         >
           <svg
@@ -40,27 +42,27 @@ export default function HamburgerBar() {
         >
           <li>
             <Link className="px-4 " to="/">
-              Hjem
+              {language === "Norwegian" ? "Hjem" : "Home"}
             </Link>
           </li>
           <li>
             <Link className="px-4" to="/About">
-              Om
+              {language === "Norwegian" ? "Om" : "About"}
             </Link>
           </li>
           <li>
             <Link className="px-4" to="/qualifications">
-              Kvalifikasjoner
+              {language === "Norwegian" ? "Kvalifikasjoner" : "Qualifications"}
             </Link>
           </li>
           <li>
             <Link className="px-4" to="/projects">
-              Prosjekter
+              {language === "Norwegian" ? "Prosjekter" : "Projects"}
             </Link>
           </li>
           <li>
             <Link className="px-4" to="/contact">
-              Kontakt
+              {language === "Norwegian" ? "Kontakt" : "Contact"}
             </Link>
           </li>
         </ul>

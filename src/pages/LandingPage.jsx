@@ -1,14 +1,16 @@
 import { useContext, useEffect } from "react";
+import LanguageContext from "../components/base components/LanguageSwitch/LanguageContext";
 import ThemeContext from "../components/base components/ThemeSwitch/ThemeContext";
 import PageContext from "../components/Navigation/PageContext";
 
 function LandingPage() {
   const { selectedTheme } = useContext(ThemeContext);
   const { setPage } = useContext(PageContext);
+  const { language } = useContext(LanguageContext);
 
   useEffect(() => {
-    setPage("Startside");
-  }, []);
+    language === "Norwegian" ? setPage("Startside") : setPage("Startpage");
+  }, [language]);
   return (
     <>
       <main className="grid font-Roboto tracking-widest select-none overflow-hidden">
@@ -25,7 +27,9 @@ function LandingPage() {
           }  lg:text-[60px] md:text-[50px] text-[40px]`}
         >
           <h2 className="animate-SlideInFromRight">
-            Kode og Design med en personlig touch
+            {language === "Norwegian"
+              ? "Kode og Design med en personlig touch"
+              : "Code and design with a personal touch"}
           </h2>
         </div>
       </main>

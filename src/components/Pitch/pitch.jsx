@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import SkewedButton from "../base components/Buttons/Button";
+import LanguageContext from "../base components/LanguageSwitch/LanguageContext";
 
 import ThemeContext from "../base components/ThemeSwitch/ThemeContext";
 
@@ -28,10 +29,14 @@ export function PitchText(props) {
 const PitchWindow = () => {
   const { selectedTheme } = useContext(ThemeContext);
   const [toggle, setToggle] = useState(false);
+  const { language } = useContext(LanguageContext);
 
   return (
     <>
-      <SkewedButton text="Styrker" onClick={() => setToggle(!toggle)} />
+      <SkewedButton
+        text={language === "Norwegian" ? "Styrker" : "Strengths"}
+        onClick={() => setToggle(!toggle)}
+      />
 
       {toggle && (
         <div
@@ -47,26 +52,52 @@ const PitchWindow = () => {
             className="absolute top-4 right-8 py-1"
           />
           <PitchText
-            title="Det å kode i seg selv er motiverende"
-            text="Nye kode utfordringer er noe jeg gleder meg til. Mulighetene som
-              åpner seg når man forstår noe nytt gjør at man så å si aldri kan
-              klare å lære alt, som jeg synes er utrolig motiverende. Det vil si
-              at jeg alltid kan lære noe nytt i dette faget!"
+            title={
+              language === "Norwegian"
+                ? "Det å kode i seg selv er motiverende"
+                : "To code itself is highly motivating"
+            }
+            text={
+              language === "Norwegian"
+                ? "Jeg ser frem til nye programmeringsutfordringer. Mulighetene som åpner seg når man forstår noe nytt, gjør at man aldri kan lære alt. Dette synes jeg er utrolig motiverende, fordi det betyr at jeg alltid kan lære noe nytt innenfor dette faget!"
+                : "I look forward to new coding challenges. The possibilities that arise when you understand something new remind me that there is always more to learn. That, in itself, is really motivating, as it means there is always room to improve and discover new things in the world of coding!"
+            }
           />
           <PitchText
-            title="Jeg elsker å lære."
-            text="Det er ekstremt motiverende å kunne lære noe nytt og jeg gleder meg hver gang jeg har muligheten til å tilegne meg en ny ferdighet"
+            title={
+              language === "Norwegian"
+                ? "Jeg elsker å lære."
+                : "I love to learn"
+            }
+            text={
+              language === "Norwegian"
+                ? "Det er svært motiverende å lære nye ting, og jeg gleder meg alltid når jeg har mulighet til å tilegne meg mer kunnskap eller nye kompetanser."
+                : "It is highly motivating to be able to learn something new, and I look forward to every opportunity I have to acquire more knowledge or new skills."
+            }
           />
           <PitchText
-            title="Jeg liker å jobbe med UI og UX:"
-            text="Dette er for meg veldig interessant og lærerikt å jobbe med. Jeg
-              gleder meg til å lære meg flere kode-språk for å kunne gjøre dette
-              bedre. Jeg håper å komme i et arbeidsmiljø som liker kode, design,
-              team-arbeid, kompetanse-heving og kvalitet."
+            title={
+              language === "Norwegian"
+                ? "Jeg ønsker å jobbe med UI og UX:"
+                : "I would like to work with UI and UX"
+            }
+            text={
+              language === "Norwegian"
+                ? "Dette er veldig interessant og lærerikt for meg å jobbe med. Jeg ser frem til å lære flere programmeringsspråk for å kunne bli enda bedre. Jeg håper å kunne jobbe i en arbeidskultur som setter pris på koding, design, teamarbeid, kompetanseheving og kvalitet."
+                : "For me this is very interesting and I learn so much by working with this. Im looking forward to learning more code-languages to be able to do this even better. I hope that I can be in a work environment that loves code, design, teamwork skill-development and quality work"
+            }
           />
           <PitchText
-            title="Jeg har spesialisert meg på React Vite med Tailwind"
-            text="Etter å ha lært react har jeg hovedsakelig fokusert på å lære det best mulig. Men jeg har også begynt å se på Svelte, Remix og React Native"
+            title={
+              language === "Norwegian"
+                ? "Jeg har spesialisert meg på React Vite og Tailwind"
+                : "I have specialized in using React with Vite and Tailwind."
+            }
+            text={
+              language === "Norwegian"
+                ? "Etter å ha lært react har jeg hovedsakelig fokusert på å lære det best mulig. Men jeg har også begynt å se på Svelte, Remix og React Native"
+                : "After learning React, it has been my main focus. However, I am also exploring other frameworks such as Svelte, Remix, and React Native."
+            }
           />
         </div>
       )}
@@ -77,10 +108,14 @@ const PitchWindow = () => {
 export const AboutWindow = () => {
   const { selectedTheme } = useContext(ThemeContext);
   const [toggle, setToggle] = useState(false);
+  const { language } = useContext(LanguageContext);
 
   return (
     <>
-      <SkewedButton text="Personlighet" onClick={() => setToggle(!toggle)} />
+      <SkewedButton
+        text={language === "Norwegian" ? "Personlighet" : "Personality"}
+        onClick={() => setToggle(!toggle)}
+      />
 
       {toggle && (
         <div
@@ -96,22 +131,42 @@ export const AboutWindow = () => {
             className="absolute top-4 right-8 py-1"
           />
           <PitchText
-            title="Jeg elsker å kode."
-            text="Jeg koder masse på fritiden og synes det er kjempegøy å lære noe
-              nytt. Mestringsfølelsen av å få til noe som jeg har sittet fast
-              med lenge er helt fantastisk!"
+            title={
+              language === "Norwegian" ? "Jeg elsker å kode." : "I love to code"
+            }
+            text={
+              language === "Norwegian"
+                ? "Jeg koder masse på fritiden og synes det er kjempegøy å lære noe nytt. Mestringsfølelsen av å få til noe som jeg har sittet fast med lenge er helt fantastisk!"
+                : "During my free time, I spend a lot of time coding because I have a genuine passion for learning more about it. The feeling of mastering a new concept that I have struggled with is truly euphoric!"
+            }
           />
           <PitchText
-            title="Personlighet:"
-            text="Jeg er kreativ, sosial, har en indre motivasjon til å lære og er en god lagspiller. Jeg har brukt hundrevis av timer utenom front-end-kurset for å lære så mye som mulig om koding. På kurset jeg har deltatt på, bekreftes dette av mine medstudenter som sier at jeg også er kunnskapsrik, hjelpsom, villig til å lære og alltid yter det lille ekstra."
+            title={language === "Norwegian" ? "Personlighet:" : "Personality"}
+            text={
+              language === "Norwegian"
+                ? "Jeg er kreativ, sosial, har en indre motivasjon til å lære og er en god lagspiller. Jeg har brukt hundrevis av timer utenom front-end-kurset for å lære så mye som mulig om koding. På kurset jeg har deltatt på, bekreftes dette av mine medstudenter som sier at jeg også er kunnskapsrik, hjelpsom, villig til å lære og alltid yter det lille ekstra."
+                : "I am a creative and social person who is intrinsically motivated to learn coding. Additionally, I am a collaborative and supportive team member."
+            }
           />
           <PitchText
-            title="Interesser:"
-            text="Foruten koding har driver jeg med styrketrening i 18 år som er godt for både kropp og sjel etter en lang dag forran skjermen"
+            title={language === "Norwegian" ? "Interesser:" : "Interests"}
+            text={
+              language === "Norwegian"
+                ? "Utover koding driver jeg med styrketrening, og har gjort det i 18 år. Dette er godt både for kropp og sjel etter lange dager foran skjermen."
+                : "In addition to coding, I do strength training and have been doing so for 18 years. This is good for both the body and mind after long days in front of the screen."
+            }
           />
           <PitchText
-            title="Jeg ønsker å lære og elsker å lære bort."
-            text="Kunnskap er ment for å deles og jeg mener at alle parter tjener på å lære bort det man kan"
+            title={
+              language === "Norwegian"
+                ? "Jeg ønsker å lære og elsker å lære bort."
+                : "I want to learn and love to teach."
+            }
+            text={
+              language === "Norwegian"
+                ? "Jeg tror at kunnskap er ment for å deles, og jeg er overbevist om at både den som underviser og den som lærer vil dra nytte av å dele det man kan."
+                : "Knowledge is meant to be shared, and I believe that everyone benefits from teaching what they know."
+            }
           />
         </div>
       )}

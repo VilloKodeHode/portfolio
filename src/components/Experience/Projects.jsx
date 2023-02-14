@@ -1,3 +1,5 @@
+import ThemeContext from "../base components/ThemeSwitch/ThemeContext.js";
+import LanguageContext from "../base components/LanguageSwitch/LanguageContext.js";
 import { useState, useContext } from "react";
 import SkewedButton from "../base components/Buttons/Button.jsx";
 
@@ -10,9 +12,9 @@ import ValhallaBeards from "./assets/Valhalla beards.png";
 import ROCKPAPERSCISSORS from "./assets/RPS.png";
 import ADVICEGENERATOR from "./assets/Advice generator.png";
 import MULTIPAGEFORM from "./assets/Multi page form.png";
-import ThemeContext from "../base components/ThemeSwitch/ThemeContext.js";
 
 function Projects() {
+  const { language } = useContext(LanguageContext);
   return (
     <>
       <div className="">
@@ -23,45 +25,81 @@ function Projects() {
           <div className="flex justify-center m-auto content-center flex-wrap">
             <ProjectCard
               href="https://villokodehode.github.io/Rock--Paper--Scissors--Lizard--Spock-game/#/"
-              projectName="Rock, Paper, Scissors"
+              projectName={
+                language === "Norwegian"
+                  ? "Stein, saks papir spill"
+                  : "Rock, Paper, Scissors"
+              }
               src={ROCKPAPERSCISSORS}
-              description="Stein, saks papir +++...."
+              description={
+                language === "Norwegian"
+                  ? "Stein, saks papir spill med 2 utvidede versjoner"
+                  : "Rock, paper scissors game with 2 extended versions"
+              }
               hrefCode="https://github.com/VilloKodeHode/Rock--Paper--Scissors--Lizard--Spock-game"
             />
             <ProjectCard
               href="https://villokodehode.github.io/multi-step-form/"
-              projectName="Multi step form"
+              projectName={
+                language === "Norwegian" ? "Flersteg skjema" : "Multi step form"
+              }
               src={MULTIPAGEFORM}
-              description="Bestillingsskjema med flere steg"
+              description={
+                language === "Norwegian"
+                  ? "Bestillingsskjema med flere steg"
+                  : "Order form with mutliple steps"
+              }
               hrefCode="https://github.com/VilloKodeHode/multi-step-form"
             />
             <ProjectCard
               href="https://villokodehode.github.io/advice-generator/"
-              projectName="Advice generator"
+              projectName={
+                language === "Norwegian" ? "Råd generator" : "Advice generator"
+              }
               src={ADVICEGENERATOR}
-              description="App for gode råd"
+              description={
+                language === "Norwegian"
+                  ? "App for gode råd"
+                  : "App for good advice"
+              }
               hrefCode="https://github.com/VilloKodeHode/advice-generator"
             />
             <ProjectCard
               href="https://villokodehode.github.io/PokeAPI/"
               projectName="PokeAPI"
               src={PokeAPI}
-              description="Den første API'en jeg har laget. Generasjon 1-3 Pokemon vises"
+              description={
+                language === "Norwegian"
+                  ? "Min første API. Generasjon 1-3 Pokemon vises"
+                  : "My first API. Generation 1-3 pokemon is shown"
+              }
               hrefCode="https://github.com/VilloKodeHode/PokeAPI"
             />
             <ProjectCard
               href="https://villokodehode.github.io/Job-simulator/"
-              projectName="Jobb simulator"
+              projectName={
+                language === "Norwegian" ? "Jobb simulator" : "Job simulator"
+              }
               src={JobSimulator}
-              description="Mitt første JS prosjekt"
+              description={
+                language === "Norwegian"
+                  ? "Mitt første JS prosjekt"
+                  : "My first JS project"
+              }
               hrefCode="https://villokodehode.github.io/Job-simulator/"
             />
 
             <ProjectCard
               href="https://villokodehode.github.io/Christmas-Calender/"
-              projectName="Julekalender"
+              projectName={
+                language === "Norwegian" ? "Julekalender" : "Christmas Calendar"
+              }
               src={XMasCalendar}
-              description="Et samarbeidsprosjekt hvor jeg har laget min egen variant"
+              description={
+                language === "Norwegian"
+                  ? "Et samarbeidsprosjekt hvor jeg har laget min egen variant"
+                  : "Teamproject where I made my own variant"
+              }
               hrefCode="https://github.com/VilloKodeHode/Christmas-Calender"
             />
 
@@ -69,14 +107,26 @@ function Projects() {
               href="https://www.figma.com/file/sCZngSCqMOKbRciWTLZodh/Vallhala-Beards?node-id=0%3A1&t=c4JqLQ0yMjR0gZQ0-0"
               projectName="Valhalla Beards"
               src={ValhallaBeards}
-              description="Figma prosjekt for en imaginær barbershop"
+              description={
+                language === "Norwegian"
+                  ? "Figma prosjekt for en imaginær barbershop"
+                  : "Figma project for a imaginary barbershop"
+              }
             />
 
             <ProjectCard
               href="https://villokodehode.github.io/strength-training-tips-app/"
-              projectName="Styrke-trenings tips"
+              projectName={
+                language === "Norwegian"
+                  ? "Styrke-trenings tips"
+                  : "Strength training tips"
+              }
               src={STYRKETRENINGSTIPS}
-              description="Første forsøk på tailwind med noe av min kunnskap om trening"
+              description={
+                language === "Norwegian"
+                  ? "Mitt første forsøk på tailwind med noe av min kunnskap om trening"
+                  : "My first try at tailwind with some of my knowledge about training"
+              }
               hrefCode="https://github.com/VilloKodeHode/strength-training-tips-app"
             />
           </div>
@@ -95,21 +145,16 @@ export function ProjectCard(props) {
       <div className="m-4 [&>*]:hover:scale-105 z-10">
         <div className="duration-500 ease-out">
           <img
-            className={`h-24 sm:h-36 lg:h-46 xl:h-56 w-24 sm:w-36 lg:w-46 xl:w-56 ${
+            className={` h-24 sm:h-36 lg:h-46 xl:h-56 w-24 sm:w-36 lg:w-46 xl:w-56 ${
               selectedTheme === "Lightmode" ? " rounded-xl" : " "
             } `}
             src={src}
           />
-          <button
-            className={` xl:text-xs text-[10px] md:w-[90%] sm:36 w-24 transition-all duration-500 hover:animate-ButtonHover ${
-              selectedTheme === "Lightmode"
-                ? "bg-fairy-300 border-water-100 shadow-water-100 text-water-100 rounded-xl"
-                : "bg-water-100 border-fairy-300 shadow-fairy-300 text-fairy-300 rounded-[1px]"
-            } btn p-2 rounded-xl  border-2 shadow-sm bg-opacity-70 backdrop-blur-xs`}
+          <SkewedButton
+            className={` xl:text-xs text-[10px] md:w-[90%] sm:36 w-24 transition-all duration-500 hover:animate-ButtonHover btn p-2 shadow-sm -translate-x-1`}
             onClick={() => setToggle(true)}
-          >
-            {projectName}
-          </button>
+            text={projectName}
+          ></SkewedButton>
         </div>
       </div>
 
@@ -128,7 +173,6 @@ export function ProjectCard(props) {
                   text="Close"
                   onClick={() => {
                     setToggle(false);
-                    console.log("click");
                   }}
                   className="text-base font-semibold w-[287px] -translate-x-3 m-2"
                 />
@@ -149,7 +193,9 @@ export function ProjectCard(props) {
                       <div className="">
                         <h3 className="text-2xl py-6">{projectName}</h3>
                         <img
-                          className="h-36 w-36 mx-auto rounded-lg"
+                          className={`hover:scale-125 transition-all hover:animate-pulse h-36 w-36 mx-auto ${
+                            selectedTheme === "Lightmode" ? "rounded-lg" : ""
+                          } mb-3`}
                           src={src}
                         />
                         <div className="flex justify-center m-auto">

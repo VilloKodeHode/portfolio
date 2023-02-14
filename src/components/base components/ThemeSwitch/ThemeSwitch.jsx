@@ -5,10 +5,10 @@ const ThemeSwitch = () => {
   const { selectedTheme, setSelectedTheme } = useContext(ThemeContext);
   return (
     <div className="w-20 -skew-x-[20deg]">
-      <div className="absolute top-1 left-2 h-8 ">
+      <div className="absolute top-2 left-2">
         {selectedTheme === "Lightmode" ? (
           <svg
-            className="swap-on  w-10 h-10  bg-fairy-300 fill-water-100"
+            className="swap-on  w-10 h-8  bg-fairy-400 fill-water-100"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -16,7 +16,7 @@ const ThemeSwitch = () => {
           </svg>
         ) : (
           <svg
-            className="swap-off w-10 h-10 bg-water-100 fill-fairy-300"
+            className="swap-off w-10 h-8 bg-water-200 fill-fairy-300"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -26,10 +26,10 @@ const ThemeSwitch = () => {
       </div>
 
       <select
-        className={`select select-bordered border-none w-full   ${
+        className={`select focus:outline-none shadow-inner w-full border-none rounded-none   ${
           selectedTheme === "Lightmode"
-            ? " bg-fairy-300 text-water-100 rounded-r-none"
-            : "bg-water-100 text-fairy-300 rounded-none"
+            ? " bg-fairy-400 shadow-earth-400 text-water-100"
+            : "bg-water-200 shadow-fairy-300 text-fairy-300"
         } `}
         value={selectedTheme}
         onChange={(e) => {
