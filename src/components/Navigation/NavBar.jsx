@@ -12,13 +12,13 @@ function NavBar() {
   const { selectedTheme } = useContext(ThemeContext);
   return (
     <header
-      className={`absolute w-screen top-0 left-0 z-50 animate-SlideInFromTop backdrop-blur-md pb-4 ${
+      className={`absolute w-full top-0 left-0 z-50 animate-SlideInFromTop backdrop-blur-md pb-4  ${
         selectedTheme === "Lightmode"
           ? "bg-water-300 bg-opacity-10"
           : "bg-fairy-300 bg-opacity-10"
       }  `}
     >
-      <div className="flex mt-4 justify-around">
+      <div className="flex mt-4 justify-around ">
         <PageTitle title={page} />
         <div className="flex">
           <LanguageSwitch />

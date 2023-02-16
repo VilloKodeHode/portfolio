@@ -8,7 +8,7 @@ const ThemeSwitch = () => {
       <div className="absolute top-2 left-2">
         {selectedTheme === "Lightmode" ? (
           <svg
-            className="swap-on  w-10 h-8  bg-fairy-400 fill-water-100"
+            className="swap-on  w-10 h-8  bg-fairy-400 fill-water-100 rounded-full"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -16,7 +16,7 @@ const ThemeSwitch = () => {
           </svg>
         ) : (
           <svg
-            className="swap-off w-10 h-8 bg-water-200 fill-fairy-300"
+            className="swap-off w-10 h-8 bg-water-200 fill-fairy-300  rounded-full"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -28,8 +28,8 @@ const ThemeSwitch = () => {
       <select
         className={`select focus:outline-none shadow-inner w-full border-none rounded-none   ${
           selectedTheme === "Lightmode"
-            ? " bg-fairy-400 shadow-earth-400 text-water-100"
-            : "bg-water-200 shadow-fairy-300 text-fairy-300"
+            ? " bg-fairy-400 shadow-earth-400 text-water-100 focus:bg-fairy-300 focus"
+            : "bg-water-200 shadow-fairy-300 text-fairy-300 focus:bg-water-100"
         } `}
         value={selectedTheme}
         onChange={(e) => {
