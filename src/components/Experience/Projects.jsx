@@ -15,123 +15,131 @@ import MULTIPAGEFORM from "./assets/Multi page form.png";
 
 function Projects() {
   const { language } = useContext(LanguageContext);
+  const { selectedTheme } = useContext(ThemeContext);
   return (
     <>
-      <div className="">
-        <section
-          className="flex animate-Appear z-50 flex-row my-12 flex-wrap justify-center content-center"
-          id="projects"
+      <section
+        className="flex animate-Appear z-50 flex-row my-12 flex-wrap justify-center content-center gap-12"
+        id="projects"
+      >
+        <h2
+          className={`${
+            selectedTheme === "Lightmode" ? "text-fairy-300" : "text-water-100"
+          } xl:mt-12 m-4 lg:text-xl leading-8 z-40 bg-opacity-90`}
         >
-          <div className="flex justify-center m-auto content-center flex-wrap">
-            <ProjectCard
-              href="https://villokodehode.github.io/Rock--Paper--Scissors--Lizard--Spock-game/#/"
-              projectName={
-                language === "Norwegian"
-                  ? "Stein, saks papir spill"
-                  : "Rock, Paper, Scissors"
-              }
-              src={ROCKPAPERSCISSORS}
-              description={
-                language === "Norwegian"
-                  ? "Stein, saks papir spill med 2 utvidede versjoner"
-                  : "Rock, paper scissors game with 2 extended versions"
-              }
-              hrefCode="https://github.com/VilloKodeHode/Rock--Paper--Scissors--Lizard--Spock-game"
-            />
-            <ProjectCard
-              href="https://villokodehode.github.io/multi-step-form/"
-              projectName={
-                language === "Norwegian" ? "Flersteg skjema" : "Multi step form"
-              }
-              src={MULTIPAGEFORM}
-              description={
-                language === "Norwegian"
-                  ? "Bestillingsskjema med flere steg"
-                  : "Order form with mutliple steps"
-              }
-              hrefCode="https://github.com/VilloKodeHode/multi-step-form"
-            />
-            <ProjectCard
-              href="https://villokodehode.github.io/advice-generator/"
-              projectName={
-                language === "Norwegian" ? "Råd generator" : "Advice generator"
-              }
-              src={ADVICEGENERATOR}
-              description={
-                language === "Norwegian"
-                  ? "App for gode råd"
-                  : "App for good advice"
-              }
-              hrefCode="https://github.com/VilloKodeHode/advice-generator"
-            />
-            <ProjectCard
-              href="https://villokodehode.github.io/PokeAPI/"
-              projectName="PokeAPI"
-              src={PokeAPI}
-              description={
-                language === "Norwegian"
-                  ? "Min første API. Generasjon 1-3 Pokemon vises"
-                  : "My first API. Generation 1-3 pokemon is shown"
-              }
-              hrefCode="https://github.com/VilloKodeHode/PokeAPI"
-            />
-            <ProjectCard
-              href="https://villokodehode.github.io/Job-simulator/"
-              projectName={
-                language === "Norwegian" ? "Jobb simulator" : "Job simulator"
-              }
-              src={JobSimulator}
-              description={
-                language === "Norwegian"
-                  ? "Mitt første JS prosjekt"
-                  : "My first JS project"
-              }
-              hrefCode="https://villokodehode.github.io/Job-simulator/"
-            />
+          {language === "Norwegian"
+            ? "Her er noen av mine varierte prosjekter som har utvidet min ekspertise innen ulike bransjer og fagområder. De utfordret meg til å lære nye ferdigheter og takle interessante problemer, fra å utvikle brukergrensesnitt til å integrere tredjeparts-API-er."
+            : "Here are some of my diverse projects that have broadened my expertise in different industries and disciplines. They challenged me to learn new skills and tackle interesting problems, from developing user interfaces to integrating third-party APIs."}
+        </h2>
+        <div className="flex justify-center m-auto content-center flex-wrap gap-12">
+          <ProjectCard
+            href="https://villokodehode.github.io/Rock--Paper--Scissors--Lizard--Spock-game/#/"
+            projectName={
+              language === "Norwegian"
+                ? "Stein, saks papir spill"
+                : "Rock, Paper, Scissors"
+            }
+            src={ROCKPAPERSCISSORS}
+            description={
+              language === "Norwegian"
+                ? "Stein, saks papir spill med 2 utvidede versjoner"
+                : "Rock, paper scissors game with 2 extended versions"
+            }
+            hrefCode="https://github.com/VilloKodeHode/Rock--Paper--Scissors--Lizard--Spock-game"
+          />
+          <ProjectCard
+            href="https://villokodehode.github.io/multi-step-form/"
+            projectName={
+              language === "Norwegian" ? "Flersteg skjema" : "Multi step form"
+            }
+            src={MULTIPAGEFORM}
+            description={
+              language === "Norwegian"
+                ? "Bestillingsskjema med flere steg"
+                : "Order form with mutliple steps"
+            }
+            hrefCode="https://github.com/VilloKodeHode/multi-step-form"
+          />
+          <ProjectCard
+            href="https://villokodehode.github.io/advice-generator/"
+            projectName={
+              language === "Norwegian" ? "Råd generator" : "Advice generator"
+            }
+            src={ADVICEGENERATOR}
+            description={
+              language === "Norwegian"
+                ? "App for gode råd"
+                : "App for good advice"
+            }
+            hrefCode="https://github.com/VilloKodeHode/advice-generator"
+          />
+          <ProjectCard
+            href="https://villokodehode.github.io/PokeAPI/"
+            projectName="PokeAPI"
+            src={PokeAPI}
+            description={
+              language === "Norwegian"
+                ? "Min første API. Generasjon 1-3 Pokemon vises"
+                : "My first API. Generation 1-3 pokemon is shown"
+            }
+            hrefCode="https://github.com/VilloKodeHode/PokeAPI"
+          />
+          <ProjectCard
+            href="https://villokodehode.github.io/Job-simulator/"
+            projectName={
+              language === "Norwegian" ? "Jobb simulator" : "Job simulator"
+            }
+            src={JobSimulator}
+            description={
+              language === "Norwegian"
+                ? "Mitt første JS prosjekt"
+                : "My first JS project"
+            }
+            hrefCode="https://villokodehode.github.io/Job-simulator/"
+          />
 
-            <ProjectCard
-              href="https://villokodehode.github.io/Christmas-Calender/"
-              projectName={
-                language === "Norwegian" ? "Julekalender" : "Christmas Calendar"
-              }
-              src={XMasCalendar}
-              description={
-                language === "Norwegian"
-                  ? "Et samarbeidsprosjekt hvor jeg har laget min egen variant"
-                  : "Teamproject where I made my own variant"
-              }
-              hrefCode="https://github.com/VilloKodeHode/Christmas-Calender"
-            />
+          <ProjectCard
+            href="https://villokodehode.github.io/Christmas-Calender/"
+            projectName={
+              language === "Norwegian" ? "Julekalender" : "Christmas Calendar"
+            }
+            src={XMasCalendar}
+            description={
+              language === "Norwegian"
+                ? "Et samarbeidsprosjekt hvor jeg har laget min egen variant"
+                : "Teamproject where I made my own variant"
+            }
+            hrefCode="https://github.com/VilloKodeHode/Christmas-Calender"
+          />
 
-            <ProjectCard
-              href="https://www.figma.com/file/sCZngSCqMOKbRciWTLZodh/Vallhala-Beards?node-id=0%3A1&t=c4JqLQ0yMjR0gZQ0-0"
-              projectName="Valhalla Beards"
-              src={ValhallaBeards}
-              description={
-                language === "Norwegian"
-                  ? "Figma prosjekt for en imaginær barbershop"
-                  : "Figma project for a imaginary barbershop"
-              }
-            />
+          <ProjectCard
+            href="https://www.figma.com/file/sCZngSCqMOKbRciWTLZodh/Vallhala-Beards?node-id=0%3A1&t=c4JqLQ0yMjR0gZQ0-0"
+            projectName="Valhalla Beards"
+            src={ValhallaBeards}
+            description={
+              language === "Norwegian"
+                ? "Figma prosjekt for en imaginær barbershop"
+                : "Figma project for a imaginary barbershop"
+            }
+          />
 
-            <ProjectCard
-              href="https://villokodehode.github.io/strength-training-tips-app/"
-              projectName={
-                language === "Norwegian"
-                  ? "Styrke-trenings tips"
-                  : "Strength training tips"
-              }
-              src={STYRKETRENINGSTIPS}
-              description={
-                language === "Norwegian"
-                  ? "Mitt første forsøk på tailwind med noe av min kunnskap om trening"
-                  : "My first try at tailwind with some of my knowledge about training"
-              }
-              hrefCode="https://github.com/VilloKodeHode/strength-training-tips-app"
-            />
-          </div>
-        </section>
-      </div>
+          <ProjectCard
+            href="https://villokodehode.github.io/strength-training-tips-app/"
+            projectName={
+              language === "Norwegian"
+                ? "Styrke-trenings tips"
+                : "Strength training tips"
+            }
+            src={STYRKETRENINGSTIPS}
+            description={
+              language === "Norwegian"
+                ? "Mitt første forsøk på tailwind med noe av min kunnskap om trening"
+                : "My first try at tailwind with some of my knowledge about training"
+            }
+            hrefCode="https://github.com/VilloKodeHode/strength-training-tips-app"
+          />
+        </div>
+      </section>
     </>
   );
 }
@@ -145,13 +153,13 @@ export function ProjectCard(props) {
       <div className="m-4 [&>*]:hover:scale-105 z-10">
         <div className="duration-500 ease-out">
           <img
-            className={` h-24 sm:h-36 lg:h-46 xl:h-56 w-24 sm:w-36 lg:w-46 xl:w-56 ${
+            className={` h-56 w-56 ${
               selectedTheme === "Lightmode" ? " rounded-xl" : " "
             } `}
             src={src}
           />
           <SkewedButton
-            className={` xl:text-xs text-[10px] md:w-[90%] sm:36 w-24 transition-all duration-500 hover:animate-ButtonHover btn p-2 shadow-sm -translate-x-1`}
+            className={` xl:text-xs text-[10px] w-56 hover:animate-ButtonHover btn p-2 shadow-sm -translate-x-[5px]`}
             onClick={() => setToggle(true)}
             text={projectName}
           ></SkewedButton>
@@ -193,7 +201,7 @@ export function ProjectCard(props) {
                       <div className="">
                         <h3 className="text-2xl py-6">{projectName}</h3>
                         <img
-                          className={`hover:scale-125 transition-all hover:animate-pulse h-36 w-36 mx-auto ${
+                          className={`hover:scale-125 transition-all hover:animate-pulse duration-500 h-36 w-36 mx-auto ${
                             selectedTheme === "Lightmode" ? "rounded-lg" : ""
                           } mb-3`}
                           src={src}

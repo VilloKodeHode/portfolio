@@ -13,7 +13,7 @@ export default function HamburgerBar() {
           tabIndex={0}
           className={`shadow-inner  border-none -skew-x-[20deg] ${
             selectedTheme === "Lightmode"
-              ? "btn bg-fairy-400 shadow-earth-400 rounded-l-none"
+              ? "btn bg-fairy-400 shadow-earth-400 hover:bg-fairy-300 rounded-l-none"
               : "btn bg-water-200 shadow-fairy-400 hover:bg-water-100  rounded-none"
           }`}
         >
@@ -35,10 +35,10 @@ export default function HamburgerBar() {
         <ul
           tabIndex={0}
           className={`menu menu-normal dropdown-content ${
-            selectedTheme === "Darkmode"
-              ? " bg-water-100 text-fairy-300 rounded-none -translate-x-[96px]"
-              : " bg-fairy-300 text-water-100 -translate-x-[96px]"
-          } mt-0 p-2 shadow rounded-box w-fit bg-opacity-80 backdrop-blur-sm z-50`}
+            selectedTheme === "Lightmode"
+              ? "bg-fairy-300 text-water-100 rounded-tl-none"
+              : "bg-water-100 text-fairy-300 rounded-none"
+          } mt-0 p-2 rounded-box z-50 -translate-x-[104px]`}
         >
           <li>
             <Link className="px-4 " to="/">

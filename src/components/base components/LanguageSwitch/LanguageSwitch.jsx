@@ -22,8 +22,8 @@ const LanguageSwitch = () => {
       <select
         className={`select select-bordered shadow-inner border-none w-full   ${
           selectedTheme === "Lightmode"
-            ? " bg-fairy-400 shadow-earth-400 text-water-100 rounded-r-none"
-            : "bg-water-200 shadow-fairy-300 text-fairy-300 rounded-none"
+            ? " bg-fairy-400 shadow-earth-400 text-water-100 focus-within:bg-fairy-300 rounded-r-none"
+            : "bg-water-200 shadow-fairy-300 text-fairy-300 focus-within:bg-bg-water-100 rounded-none"
         } `}
         value={language}
         onChange={(e) => {

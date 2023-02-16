@@ -61,153 +61,168 @@ export function MySkills(props) {
 }
 
 export function KnowledgeContent() {
+  const { selectedTheme } = useContext(ThemeContext);
   const { language } = useContext(LanguageContext);
   return (
-    <div className="animate-Appear flex justify-center flex-wrap xl:gap-16 md:gap-12 sm:gap-8 ml:gap-4 gap-2">
-      <KnowledgeIcon
-        src="https://cdn-icons-png.flaticon.com/512/136/136528.png"
-        alt="HyperText Markup Language"
-        dataTip={` ${
-          language === "Norwegian"
-            ? "Lærte det fort og kjekt å kunne når man bruker React"
-            : "Learned it fast and handy to know when using React"
-        } `}
-      />
+    <section
+      className="flex animate-Appear z-50 flex-row my-12 flex-wrap justify-center content-center gap-12"
+      id="projects"
+    >
+      <h2
+        className={`${
+          selectedTheme === "Lightmode" ? "text-fairy-300" : "text-water-100"
+        } xl:mt-12 m-4 lg:text-xl leading-8 z-40 bg-opacity-90`}
+      >
+        {language === "Norwegian"
+          ? "Som en nylig utdannet front-end utvikler har jeg opparbeidet meg en dyp forståelse av HTML, CSS og JavaScript gjennom et bootcamp-kurs og personlige prosjekter. Jeg er opptatt av detaljer og tar stolthet i å levere arbeid av høy kvalitet."
+          : "As a newly educated front-end developer, I have acquired a deep understanding of HTML, CSS, and JavaScript through a bootcamp course and personal projects. I have a strong attention to detail and take pride in delivering high-quality work."}
+      </h2>
+      <div className="flex justify-center flex-wrap xl:gap-16 md:gap-12 sm:gap-8 ml:gap-4 gap-2">
+        <KnowledgeIcon
+          src="https://cdn-icons-png.flaticon.com/512/136/136528.png"
+          alt="HyperText Markup Language"
+          dataTip={` ${
+            language === "Norwegian"
+              ? "Lærte det fort og kjekt å kunne når man bruker React"
+              : "Learned it fast and handy to know when using React"
+          } `}
+        />
 
-      <KnowledgeIcon
-        src="https://cdn-icons-png.flaticon.com/512/136/136527.png"
-        alt="Cascading StyleSheets"
-        dataTip={` ${
-          language === "Norwegian"
-            ? "Jeg har brukt mye tid på å lære det meste om css. Dette har gjort tailwind veldig enkelt å lære"
-            : "I spent alot of time trying out everything within css. This has made it very easy to learn tailwind"
-        } `}
-      />
-      <KnowledgeIcon
-        src="https://cdn-icons-png.flaticon.com/512/136/136530.png"
-        alt="JavaScript"
-        dataTip={` ${
-          language === "Norwegian"
-            ? "Var veldig vanskelig i starten, men etter å ha prøvd på noen prosjekter selv har jeg fått en god forståelse av JS"
-            : "Was hard at first, but after trying out some projects myself I got a good understanding of JS"
-        } `}
-      />
+        <KnowledgeIcon
+          src="https://cdn-icons-png.flaticon.com/512/136/136527.png"
+          alt="Cascading StyleSheets"
+          dataTip={` ${
+            language === "Norwegian"
+              ? "Jeg har brukt mye tid på å lære det meste om css. Dette har gjort tailwind veldig enkelt å lære"
+              : "I spent alot of time trying out everything within css. This has made it very easy to learn tailwind"
+          } `}
+        />
+        <KnowledgeIcon
+          src="https://cdn-icons-png.flaticon.com/512/136/136530.png"
+          alt="JavaScript"
+          dataTip={` ${
+            language === "Norwegian"
+              ? "Var veldig vanskelig i starten, men etter å ha prøvd på noen prosjekter selv har jeg fått en god forståelse av JS"
+              : "Was hard at first, but after trying out some projects myself I got a good understanding of JS"
+          } `}
+        />
 
-      <KnowledgeIcon
-        src="https://cdn-icons-png.flaticon.com/512/2306/2306154.png"
-        alt="PHP"
-        dataTip={` ${
-          language === "Norwegian"
-            ? "Jeg har kun sjekket PHP litt for å se syntaxen og bruksområdet. Sålangt virket det ikke så vanskelig etter å ha lært JS"
-            : "I have only checked out a bit PHP to see the syntax and usage. Seems easy to learn after learning JS."
-        } `}
-      />
+        <KnowledgeIcon
+          src="https://cdn-icons-png.flaticon.com/512/2306/2306154.png"
+          alt="PHP"
+          dataTip={` ${
+            language === "Norwegian"
+              ? "Jeg har kun sjekket PHP litt for å se syntaxen og bruksområdet. Sålangt virket det ikke så vanskelig etter å ha lært JS"
+              : "I have only checked out a bit PHP to see the syntax and usage. Seems easy to learn after learning JS."
+          } `}
+        />
 
-      <KnowledgeIcon
-        src="https://cdn-icons-png.flaticon.com/512/5815/5815421.png"
-        alt="Python"
-        dataTip={` ${
-          language === "Norwegian"
-            ? "Jeg kan se mange likheter mellom JS og PY. Dette har gjort det enkelt å lære også"
-            : "I can really see the similarities between JS and PY. Makes it very easy too learn."
-        } `}
-      />
+        <KnowledgeIcon
+          src="https://cdn-icons-png.flaticon.com/512/5815/5815421.png"
+          alt="Python"
+          dataTip={` ${
+            language === "Norwegian"
+              ? "Jeg kan se mange likheter mellom JS og PY. Dette har gjort det enkelt å lære også"
+              : "I can really see the similarities between JS and PY. Makes it very easy too learn."
+          } `}
+        />
 
-      <KnowledgeIcon
-        src="https://cdn-icons-png.flaticon.com/512/3334/3334886.png"
-        alt="React"
-        dataTip={` ${
-          language === "Norwegian"
-            ? "Siden jeg lært meg React blir alt jeg koder brukt med dette fantastiske frameworket"
-            : "Since I learned about React everything I code is in this amazing framework."
-        } `}
-      />
-      <KnowledgeIcon
-        src={VSC}
-        alt="VSC"
-        dataTip={` ${
-          language === "Norwegian"
-            ? "Dette var det jeg ble introdusert for når jeg startet å kode, og jeg elsker det!"
-            : "This is what was introduced to us when I started learning to code, and I love it!"
-        } `}
-      />
-      <KnowledgeIcon
-        src="https://seeklogo.com/images/V/vite-logo-BFD4283991-seeklogo.com.png"
-        alt="Vite"
-        dataTip={` ${
-          language === "Norwegian"
-            ? "Vite er noe jeg alltid bruker i React prosjekter, fordi det fungerer veldig bra"
-            : "Vite is something I always use in React projects because it works really well."
-        } `}
-      />
+        <KnowledgeIcon
+          src="https://cdn-icons-png.flaticon.com/512/3334/3334886.png"
+          alt="React"
+          dataTip={` ${
+            language === "Norwegian"
+              ? "Siden jeg lært meg React blir alt jeg koder brukt med dette fantastiske frameworket"
+              : "Since I learned about React everything I code is in this amazing framework."
+          } `}
+        />
+        <KnowledgeIcon
+          src={VSC}
+          alt="VSC"
+          dataTip={` ${
+            language === "Norwegian"
+              ? "Dette var det jeg ble introdusert for når jeg startet å kode, og jeg elsker det!"
+              : "This is what was introduced to us when I started learning to code, and I love it!"
+          } `}
+        />
+        <KnowledgeIcon
+          src="https://seeklogo.com/images/V/vite-logo-BFD4283991-seeklogo.com.png"
+          alt="Vite"
+          dataTip={` ${
+            language === "Norwegian"
+              ? "Vite er noe jeg alltid bruker i React prosjekter, fordi det fungerer veldig bra"
+              : "Vite is something I always use in React projects because it works really well."
+          } `}
+        />
 
-      <KnowledgeIcon
-        src={Tailwind}
-        alt="Tailwind"
-        dataTip={` ${
-          language === "Norwegian"
-            ? "Etter å ha blitt anbefalt dette av en venn bruker jeg for det meste tailwind til styling. Men noen ganger supplerer jeg med normal css"
-            : "After being recommended this by a friend I mostly use tailwind. But sometimes I supplement with normal css"
-        } `}
-      />
+        <KnowledgeIcon
+          src={Tailwind}
+          alt="Tailwind"
+          dataTip={` ${
+            language === "Norwegian"
+              ? "Etter å ha blitt anbefalt dette av en venn bruker jeg for det meste tailwind til styling. Men noen ganger supplerer jeg med normal css"
+              : "After being recommended this by a friend I mostly use tailwind. But sometimes I supplement with normal css"
+          } `}
+        />
 
-      <KnowledgeIcon
-        src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png"
-        alt="Figma"
-        dataTip={` ${
-          language === "Norwegian"
-            ? "Selv om jeg har lagd prototyper og kan bruke Figma god foretrekker jeg heller å bare kode"
-            : "Although I have made prototypes and know how to make a good figma project I prefer to just code"
-        } `}
-      />
+        <KnowledgeIcon
+          src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png"
+          alt="Figma"
+          dataTip={` ${
+            language === "Norwegian"
+              ? "Selv om jeg har lagd prototyper og kan bruke Figma god foretrekker jeg heller å bare kode"
+              : "Although I have made prototypes and know how to make a good figma project I prefer to just code"
+          } `}
+        />
 
-      <KnowledgeIcon
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Canva_icon_2021.svg/600px-Canva_icon_2021.svg.png?20220821125247"
-        alt="Canva"
-        dataTip={` ${
-          language === "Norwegian"
-            ? "Mine CVer er lagd med Canva og jeg har lekt meg mye med dette verktøyet"
-            : "I made my CVs with Canva, and have played around alot with its possibilities"
-        } `}
-      />
-      <KnowledgeIcon
-        src={Photoshop}
-        alt="Photoshop"
-        dataTip={` ${
-          language === "Norwegian"
-            ? "Jeg lærte raskt å redigere bilder med photoshop. Jeg bruker det nå til å forbedre bilder jeg vil bruke"
-            : "I learned to edit images really fast using photoshop. I use it to improve images I want to use."
-        } `}
-      />
+        <KnowledgeIcon
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Canva_icon_2021.svg/600px-Canva_icon_2021.svg.png?20220821125247"
+          alt="Canva"
+          dataTip={` ${
+            language === "Norwegian"
+              ? "Mine CVer er lagd med Canva og jeg har lekt meg mye med dette verktøyet"
+              : "I made my CVs with Canva, and have played around alot with its possibilities"
+          } `}
+        />
+        <KnowledgeIcon
+          src={Photoshop}
+          alt="Photoshop"
+          dataTip={` ${
+            language === "Norwegian"
+              ? "Jeg lærte raskt å redigere bilder med photoshop. Jeg bruker det nå til å forbedre bilder jeg vil bruke"
+              : "I learned to edit images really fast using photoshop. I use it to improve images I want to use."
+          } `}
+        />
 
-      <KnowledgeIcon
-        src={Git}
-        alt="Git"
-        dataTip={` ${
-          language === "Norwegian"
-            ? "Etter at jeg installerte Git har jeg ikke brukt mye tid å tenke på det igjen, selv om jeg bruker det hele tiden"
-            : "After installing it I never really thought much about Git again, although im using it all the time"
-        } `}
-      />
-      <KnowledgeIcon
-        src="https://cdn-icons-png.flaticon.com/512/4494/4494749.png"
-        alt="GitHub"
-        dataTip={` ${
-          language === "Norwegian"
-            ? "All min kode er på Github. Jeg bruker det mye og vet hvordan det fungerer"
-            : "All my code is on GitHub. I have used it alot, so I know how the works."
-        } `}
-      />
-      <KnowledgeIcon
-        src={SVELTE}
-        alt="Svelte"
-        dataTip={` ${
-          language === "Norwegian"
-            ? "Har begynt å lære meg dette. Så langt ser det ut til å være et veldig godt verktøy"
-            : "Starting out learning about it. So far it looks like a very good tool"
-        } `}
-      />
-    </div>
+        <KnowledgeIcon
+          src={Git}
+          alt="Git"
+          dataTip={` ${
+            language === "Norwegian"
+              ? "Etter at jeg installerte Git har jeg ikke brukt mye tid å tenke på det igjen, selv om jeg bruker det hele tiden"
+              : "After installing it I never really thought much about Git again, although im using it all the time"
+          } `}
+        />
+        <KnowledgeIcon
+          src="https://cdn-icons-png.flaticon.com/512/4494/4494749.png"
+          alt="GitHub"
+          dataTip={` ${
+            language === "Norwegian"
+              ? "All min kode er på Github. Jeg bruker det mye og vet hvordan det fungerer"
+              : "All my code is on GitHub. I have used it alot, so I know how the works."
+          } `}
+        />
+        <KnowledgeIcon
+          src={SVELTE}
+          alt="Svelte"
+          dataTip={` ${
+            language === "Norwegian"
+              ? "Har begynt å lære meg dette. Så langt ser det ut til å være et veldig godt verktøy"
+              : "Starting out learning about it. So far it looks like a very good tool"
+          } `}
+        />
+      </div>
+    </section>
   );
 }
 

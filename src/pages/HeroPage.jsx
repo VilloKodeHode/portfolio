@@ -50,8 +50,8 @@ export default function HeroPage() {
             }`}
           >
             {language === "Norwegian"
-              ? "For tiden går jeg på kurs om Front-End-Development og bruker endeløse timer på å lære så mye jeg kan om koding og design. Jeg nyter hvert eneste sekund og blir bare mer og mer interessert i å lære mer!"
-              : "I am currently enrolling in a Front End developer course and use a lot of time to learn about coding and desing. I'm enjoying every second and constantly get more and more interested to learn more!"}
+              ? "Jeg nærmer meg slutte på et Front-End-Development kurs og har brukt mange timer utenom kurset på å lære så mye jeg kan om koding og design. Hvert eneste sekund har vært lærerikt og jeg har hele tiden jobbet med å lære meg så mye som mulig"
+              : "I am nearing the end of a Front End developer course and have used a lot of time outside of the cours to learn as much as possible about coding and desing. Every second has been educational and i have throughout the course worked towards learning as much as possible"}
           </p>
         </article>
         <div className="mx-auto">
@@ -68,7 +68,7 @@ export default function HeroPage() {
           <Cv href={STANDARDCV} src={STANDARDCVIMG} className="cv standard" />
           <Cv href={SHORTEDCV} src={SHORTEDCVIMG} className="cv fancy" />
         </div>
-        <div className="md:w-2/3 mx-auto">
+        <div className="md:w-2/3 flex gap-12 justify-center m-auto">
           <AboutWindow />
           <PitchWindow />
         </div>
