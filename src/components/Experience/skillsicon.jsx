@@ -9,6 +9,8 @@ import Photoshop from "./assets/Photoshop.png";
 import Tailwind from "./assets/Tailwind.png";
 import VSC from "./assets/VSC.png";
 import SVELTE from "./assets/Svelte.svg";
+import VUE from "./assets/vue.svg";
+import DEVOPS from "./assets/devops.png";
 
 export function KnowledgeIcon(props) {
   const { selectedTheme } = useContext(ThemeContext);
@@ -23,11 +25,13 @@ export function KnowledgeIcon(props) {
         }  tooltip tooltip-bottom before:w-[120%] before:shadow-md before:text-xs before:content-[attr(data-tip)] h-fit shadow-lg skew-x-[10deg] odd:skew-y-[5deg] even:-skew-y-[5deg] hover:skew-x-[0deg] hover:odd:skew-y-[0deg] hover:even:-skew-y-[0deg] hover:z-50 transition duration-500`}
         data-tip={dataTip}
       >
-        <figure className="xl:p-4 lg:p-3 sm:p-2 p-1 xl:m-4 lg:m-3 sm:m-2 m-1 z-50">
+        <figure className="xl:p-2 lg:p-3 sm:p-2 p-1 m-1 z-50">
           <img
             className={` ${
-              selectedTheme === "Lightmode" ? "rounded-md" : ""
-            } xl:h-16 h-16 bg-black bg-opacity-10 shadow-inner p-2`}
+              selectedTheme === "Lightmode"
+                ? "rounded-md bg-opacity-30"
+                : "bg-opacity-10"
+            } h-20 bg-black shadow-inner p-2`}
             src={src}
             alt={alt}
           />
@@ -71,11 +75,11 @@ export function KnowledgeContent() {
       <h2
         className={`${
           selectedTheme === "Lightmode" ? "text-fairy-300" : "text-water-100"
-        } xl:mt-12 m-4 lg:text-xl leading-8 z-40 bg-opacity-90`}
+        } xl:mt-12 m-4 lg:text-xl leading-8 z-40`}
       >
         {language === "Norwegian"
-          ? "Som en nylig utdannet front-end utvikler har jeg opparbeidet meg en dyp forståelse av HTML, CSS og JavaScript gjennom et bootcamp-kurs og personlige prosjekter. Jeg er opptatt av detaljer og tar stolthet i å levere arbeid av høy kvalitet."
-          : "As a newly educated front-end developer, I have acquired a deep understanding of HTML, CSS, and JavaScript through a bootcamp course and personal projects. I have a strong attention to detail and take pride in delivering high-quality work."}
+          ? "Som en nylig utdannet front-end utvikler har jeg opparbeidet meg en dyp forståelse av HTML, CSS og JavaScript gjennom et bootcamp-kurs og personlige prosjekter. Jeg jobber stadig med å utvide kunnskapen min til andre frameworks."
+          : "As a newly educated front-end developer, I have acquired a deep understanding of HTML, CSS, and JavaScript through a bootcamp course and personal projects. I work continuously to expand my knowledge to other frameworks."}
       </h2>
       <div className="flex justify-center flex-wrap xl:gap-16 md:gap-12 sm:gap-8 ml:gap-4 gap-2">
         <KnowledgeIcon
@@ -221,6 +225,24 @@ export function KnowledgeContent() {
               : "Starting out learning about it. So far it looks like a very good tool"
           } `}
         />
+        <KnowledgeIcon
+          src={VUE}
+          alt="vue.js"
+          dataTip={` ${
+            language === "Norwegian"
+              ? "Vue er noe jeg har begynt å lære meg nylig. Jeg er godt igang med å lære meg det"
+              : "Vue is something i resently started to learn. Im already starting to understand the syntax"
+          } `}
+        />
+        <KnowledgeIcon
+          src={DEVOPS}
+          alt="devops"
+          dataTip={` ${
+            language === "Norwegian"
+              ? "Jeg har lest meg opp på denne arbeidsmetoden nylig og ser at det er en veldig produktiv måte å jobbe på."
+              : "I have read up on this workmethod recently and can see that it is a very productive way to work"
+          } `}
+        />
       </div>
     </section>
   );
@@ -244,7 +266,7 @@ export function SkillsContent() {
             selectedTheme === "Lightmode"
               ? " bg-water-100 text-fairy-300 rounded-l-xl scrollbar-thumb-fairy-300"
               : " bg-fairy-300 text-water-100 scrollbar-thumb-water-100"
-          } animate-ModalSlideIn bg-opacity-90 shadow-2xl shadow-black p-8 overflow-y-scroll scrollbar  scrollbar-track-transparent fixed md:w-[90%] h-3/4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50`}
+          } flex xl:items-center bg-opacity-90 shadow-2xl shadow-black p-8 overflow-y-scroll scrollbar  scrollbar-track-transparent fixed md:w-[90%] h-3/4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50`}
         >
           <SkewedButton
             text="X"
