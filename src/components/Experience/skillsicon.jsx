@@ -299,7 +299,7 @@ export function SkillsContent() {
                 description={` ${
                   language === "Norwegian"
                     ? "Design og brukervennlighet er noe jeg liker å jobbe med"
-                    : "Design and user experience is something i lose to work with"
+                    : "Design and user experience is something i love to work with"
                 }`}
               />
 
